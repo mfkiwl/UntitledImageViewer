@@ -2,7 +2,12 @@
 
 UntitledImageViewer::Instance::Instance()
 {
-
+    initInfo =
+    {
+        .titlebarComponents = { &mainBar },
+        .windowComponents = { &help, &aboutus },
+        .globalData = (void*)this
+    };
 }
 
 void UntitledImageViewer::Instance::begin()
@@ -14,7 +19,6 @@ void UntitledImageViewer::Instance::begin()
 void UntitledImageViewer::Instance::tick(float deltaTime)
 {
     tickAutohandle(deltaTime);
-
 }
 
 void UntitledImageViewer::Instance::end()

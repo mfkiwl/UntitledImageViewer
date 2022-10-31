@@ -1,5 +1,8 @@
 #pragma once
 #include <Framework.hpp>
+#include "MainBar.hpp"
+#include "More/Aboutus.hpp"
+#include "More/Help.hpp"
 
 namespace UntitledImageViewer
 {
@@ -14,7 +17,11 @@ namespace UntitledImageViewer
 
         virtual void onEventConfigureStyle(ImGuiStyle& style, ImGuiIO& io) override;
     private:
+        friend class MainBar;
 
+        MainBar mainBar;
+        Aboutus aboutus;
+        Help help;
     };
 }
 
