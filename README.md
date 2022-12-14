@@ -8,6 +8,7 @@ A small image viewer
 Features:
 - [x] Many supported formats
     - JPEG
+    - JPEG-XL [extension]
     - PNG
     - TGA
     - BMP
@@ -17,6 +18,9 @@ Features:
     - PIC
     - PGM
     - PPM
+    - WEBP [extension]
+    - AVIF [extension]
+    - HEIF [extension]
 - [ ] Image cropping
 - [x] Image zoom
 - [ ] Horizontal and vertical image flipping
