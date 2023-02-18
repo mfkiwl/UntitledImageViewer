@@ -5,7 +5,7 @@ UntitledImageViewer::Instance::Instance()
     initInfo =
     {
         .titlebarComponents = { &mainBar },
-        .windowComponents = { &help, &aboutus },
+        .windowComponents = { &help, &aboutus, &exitWidget },
         .globalData = (void*)this
     };
 }

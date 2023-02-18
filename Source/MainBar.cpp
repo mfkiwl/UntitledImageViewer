@@ -23,7 +23,8 @@ void UntitledImageViewer::MainBar::tick(float deltaTime)
             if (ImGui::MenuItem("Open"));
             if (ImGui::MenuItem("Save"));
             if (ImGui::MenuItem("Save As"));
-            if (ImGui::MenuItem("Exit"));
+            if (ImGui::MenuItem("Exit"))
+                initInfo->exitWidget.state = UImGui::UIMGUI_COMPONENT_STATE_RUNNING;
             ImGui::EndMenu();
         }
 

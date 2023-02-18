@@ -3,6 +3,7 @@
 #include "MainBar.hpp"
 #include "More/Aboutus.hpp"
 #include "More/Help.hpp"
+#include "Popups/Exit.hpp"
 
 namespace UntitledImageViewer
 {
@@ -20,8 +21,10 @@ namespace UntitledImageViewer
         friend class MainBar;
 
         MainBar mainBar;
+
         Aboutus aboutus;
         Help help;
+        Exit exitWidget;
     };
 }
 
