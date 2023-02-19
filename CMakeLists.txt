@@ -72,6 +72,23 @@ option(USE_TOGGLES_MODULE "Use the toggles module" OFF)
 option(USE_TEXT_UTILS_MODULE "Use the text utils module" OFF)
 option(USE_MARKDOWN_MODULE "Use the markdown rendering module" OFF)
 
+# Patch by the UntitledImageViewer
+option(USE_AVIF_SUPPORT "Turn on AVIF and HEIF" ON)
+option(USE_JPEG_XL_SUPPORT "Turn on support for JPEG XL" ON)
+option(USE_WEBP_SUPPORT "Turn on support for WebP" ON)
+
+if (USE_AVIF_SUPPORT)
+    add_subdirectory(ThirdParty/libavif)
+endif()
+
+if (USE_JPEG_XL_SUPPORT)
+    add_subdirectory(ThirdParty/libjxl)
+endif()
+
+if (USE_WEBP_SUPPORT)
+    add_subdirectory(ThirdParty/libwebp)
+endif()
+
 # ----------------------------------------------------------------------------------------------------------------------
 # ---------------------------------------------- Add files and directories ---------------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
@@ -237,6 +254,18 @@ if (USE_OS_MODULE)
     endif()
 endif()
 
+if (USE_AVIF_SUPPORT)
+    target_compile_definitions(UntitledImageViewer PRIVATE "USE_AVIF")
+endif()
+
+if (USE_JPEG_XL_SUPPORT)
+    target_compile_definitions(UntitledImageViewer PRIVATE "USE_JPEG_XL")
+endif()
+
+if (USE_WEBP_SUPPORT)
+    target_compile_definitions(UntitledImageViewer PRIVATE "USE_WEBP")
+endif()
+
 # ----------------------------------------------------------------------------------------------------------------------
 # ------------------------------------------ Set up project compiler definitions ---------------------------------------
 # ----------------------------------------------------------------------------------------------------------------------
@@ -269,6 +298,17 @@ else()
         if (ENABLE_UFONT_UTILS)
             target_link_libraries(UntitledImGuiFramework Fontconfig::Fontconfig)
         endif()
+    endif()
+    if (USE_AVIF_SUPPORT)
+        target_link_libraries(UntitledImageViewer avif)
+    endif()
+
+    if (USE_JPEG_XL_SUPPORT)
+        target_link_libraries(UntitledImageViewer jxl)
+    endif()
+
+    if (USE_WEBP_SUPPORT)
+        target_link_libraries(UntitledImageViewer webp)
     endif()
 endif()
 

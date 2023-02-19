@@ -1,0 +1,9 @@
+[submodule "ThirdParty/libavif"]
+	path = ThirdParty/libavif
+	url = https://github.com/MadLadSquad/libavif.git
+[submodule "ThirdParty/libwebp"]
+	path = ThirdParty/libwebp
+	url = https://github.com/MadLadSquad/libwebp
+[submodule "ThirdParty/libjxl"]
+	path = ThirdParty/libjxl
+	url = https://github.com/MadLadSquad/libjxl
