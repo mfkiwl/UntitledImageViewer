@@ -21,6 +21,10 @@ cd UntitledImGuiFramework/UVKBuildTool/build || exit
 ./UVKBuildTool.exe --generate ../../../ || ./UVKBuildTool --generate ../../../ || exit
 cd ../../../
 
+cd ThirdParty/libavif/ext || exit
+./dav1d.cmd || exit
+cd ../../../ || exit
+
 # Build the project
 mkdir build || exit
 cd build || exit
