@@ -39,6 +39,7 @@ jobs:
         uses: microsoft/setup-msbuild@main
       - name: Get dependencies
         run: pip install meson ninja nasm || echo "Fail"
+      - uses: ilammy/setup-nasm@v1
       - name: Checkout submodules
         shell: bash
         run: |
