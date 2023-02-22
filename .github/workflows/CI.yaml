@@ -38,7 +38,7 @@ jobs:
       - name: Set MSBuild env
         uses: microsoft/setup-msbuild@main
       - name: Get dependencies
-        run: pip install meson ninja || echo "Fail"
+        run: pip install meson ninja nasm || echo "Fail"
       - name: Checkout submodules
         shell: bash
         run: |
