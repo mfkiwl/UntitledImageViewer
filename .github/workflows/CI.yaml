@@ -38,7 +38,7 @@ jobs:
       - name: Set MSBuild env
         uses: microsoft/setup-msbuild@main
       - name: Get dependencies
-        run: winget install mesonbuild Ninja-build
+        run: choco install mesonbuild Ninja-build
       - name: Checkout submodules
         shell: bash
         run: |
